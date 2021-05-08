@@ -1,4 +1,4 @@
-package com.insta.retrofit_example.api
+package com.insta.retrofit_example.model
 
 data class Status(
     val sentCount: Int,

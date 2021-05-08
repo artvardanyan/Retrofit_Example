@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.insta.retrofit_example.api.ApiRequests
 import com.insta.retrofit_example.databinding.ActivityMainBinding
+import com.insta.retrofit_example.utils.Constants
+import com.insta.retrofit_example.utils.Constants.Companion.BASE_URL
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -46,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
 
                     val data = response.body()
-                    Log.d(TAG, data.toString())
+                    Log.d(Constants.TAG, data.toString())
 
                     withContext(Dispatchers.Main) {
                         binding.tvTextView.visibility = View.VISIBLE
@@ -67,10 +70,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    companion object {
-        const val BASE_URL = "https://cat-fact.herokuapp.com"
-        const val TAG = "MainActivity"
     }
 }
